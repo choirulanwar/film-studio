@@ -1,13 +1,15 @@
-# Workflow: Micro-Drama & Vertical Series
+# Workflow: Micro-drama & seri vertikal
 
-## Target Specifications
-- **Default Aspect Ratio:** `9:16`
-- **Container Duration:** 60–90 seconds per episode
-- **Clip Unit Duration:** 3–5 seconds per shot (optimized for Google Flow / Omni)
-- **Silent Atmospheric Montage Ratio:** 20–30% of runtime
+Semua angka di workflow ini adalah **pertanyaan brief, bukan default**: rasio, durasi per episode, jumlah episode, dan satuan generate mengikuti `brief.md` + tool target. v1 mematok 9:16 / 60–90 detik / klip 3–5 detik — dicabut.
 
-## Narrative Pacing Rules
-1. **The 3-Second Hook:** Shot 1 must open *in media res* with immediate visual tension, mystery, or emotional intrigue.
-2. **Micro-Beats:** Every 5–10 seconds must introduce a visual shift, reaction shot, or revelation to retain vertical feed attention.
-3. **Episode Cliffhanger:** The final 5 seconds of every episode must end on an unresolved question, arrival, or emotional turn.
-4. **Safety Compliance:** Convey conflict or peril through implied tension, framing, and sound design rather than explicit violence.
+## Pacing (relatif, bukan angka patok)
+
+1. **Hook di shot pertama:** buka *in media res* — ketegangan, pertanyaan visual, atau kedatangan yang belum jelas — dalam detik-detik pertama episode, berapa pun durasi satuan generatenya.
+2. **Perubahan berkala:** setiap beberapa detik harus ada pergeseran visual, reaksi, atau informasi baru; jaraknya mengikuti durasi episode dari brief (episode pendek = lebih rapat).
+3. **Cliffhanger akhir episode:** keadaan **berubah** di detik terakhir (kedatangan, penemuan, keputusan) — bukan sekadar ekspresi kaget. Pertanyaan yang ditinggalkan harus spesifik.
+4. **Porsi atmosfer:** shot hening/atmosferik boleh ada (v1 menyarankan 20–30%) tapi sebagai **keputusan sadar per episode** yang dicatat di naskah, bukan kuota otomatis.
+5. **Keselamatan & platform:** konflik/peril disampaikan lewat ketegangan, framing, dan suara, bukan kekerasan eksplisit — sesuaikan dengan aturan platform tujuan dari brief bila disebut.
+
+## Bible lintas episode
+
+Cast/set/properti episode 1 dipakai ulang verbatim. Episode baru hanya menambah aset baru (gerbang 5 menulis baris "pakai ulang"). `rolling_summary` di `bible.json` diperbarui tiap episode selesai: satu-dua kalimat keadaan terakhir tiap tokoh & pertanyaan terbuka.

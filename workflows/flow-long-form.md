@@ -1,11 +1,10 @@
-# Workflow: Long-Form Feature Film & Multi-Episode Series
+# Workflow: Long-form — film fitur & seri multi-episode
 
-## Target Specifications
-- **Default Aspect Ratio:** `16:9` or `2.39:1`
-- **Container Structure:** Acts (Act I, II, III) for features, or Episodes (`ep_01..ep_N`) for series
-- **Clip Unit Duration:** 5–10 seconds per shot
+Rasio, durasi, dan jumlah act/episode dari `brief.md`. Tidak ada patok 16:9 / 2.39:1 / klip 5–10 detik seperti v1.
 
-## Continuity & Scalability Rules
-1. **Incremental Expansion:** Never script all episodes in one pass. Develop one container/act at a time while updating `rolling_summary` in `bible.json`.
-2. **Continuity State Overrides:** When time of day, weather, or wardrobe changes across scenes, keep the base `character_id` and `location_id` intact while applying explicit scene-level overrides (`wardrobe_override`, `lighting_override`).
-3. **Dramatic Breathing Room:** Balance dialogue scenes with establishing wide shots, insert details, and contemplative atmospheric pauses.
+## Aturan kerja
+
+1. **Inkremental:** kerjakan satu container (act/episode) dalam satu lintasan gerbang 4–8. Jangan menulis semua episode sekaligus. Setelah satu container selesai, perbarui `rolling_summary` dan status container di `bible.json`.
+2. **Override per scene, bukan entitas baru:** perubahan waktu, cuaca, atau wardrobe dicatat sebagai override di level scene (`wardrobe_override`, `lighting_override` di `bible.json`) dengan `character_id`/`location_id` tetap. Wardrobe yang berulang lintas container naik kelas jadi wardrobe varian di bible (gerbang 3).
+3. **Ruang bernapas:** selingi dialog dengan establishing, insert benda kunci, dan jeda atmosferik — ditandai eksplisit di naskah sebagai shot tanpa dialog, bukan dibiarkan kosong.
+4. **Arc vs container:** `konsep.md` memegang arc keseluruhan; tiap container wajib menggerakkan arc (keadaan tokoh/pengetahuan penonton berubah), bukan episode pengisi. Cek ini di gerbang 4 sebelum shot list ditulis.
