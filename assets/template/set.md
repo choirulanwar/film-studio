@@ -1,18 +1,18 @@
-# Set & properti bible — <judul proyek>
+# Set & props bible — <project title>
 
-<!-- Satu blok per lokasi: jenis ruang & di mana / elemen arsitektur besar /
-     furnitur utama / material lantai / satu benda ganjil /
-     SEMUA pintu & jalan masuk yang dipakai arc. Salin verbatim. -->
+<!-- One block per location: type of space & where / major architectural elements /
+     main furniture / floor material / one odd object /
+     ALL doors & entrances used by the arc. Copy verbatim. -->
 
-## <NAMA LOKASI> [gambar_<nama>]
+## <LOCATION NAME> [gambar_<name>]
 
-<Nama lokasi> [gambar_<nama>]
-<blok set lengkap>
+<Location name> [gambar_<name>]
+<full set block>
 
-## Properti
+## Props
 
-### <NAMA PROPERTI> [gambar_<nama>] <!-- berpelat -->
-<blok properti lengkap; benda bertulisan wajib berisi larangan teksnya>
+### <PROP NAME> [gambar_<name>] <!-- with plate -->
+<full prop block; objects bearing writing must contain their no-text prohibition>
 
-### <NAMA PROPERTI> — teks saja
-<blok properti lengkap>
+### <PROP NAME> — text only
+<full prop block>

@@ -1,21 +1,21 @@
-# Film Studio v2 (DRAFT)
+# Film Studio v2
 
-Perancang film AI live-action + penulis prompt produksi: micro-drama, film/seri long-form, dan music video.
+Live-action AI film designer + production prompt writer: micro-drama, long-form film/series, and music video.
 
-**Status: draft v2 — dipush untuk dites dari Spaces, belum rilis final.** Titik masuk skill: [`SKILL.md`](SKILL.md). Peta perubahan dari v1 dan alasannya: [`CHANGELOG-DRAFT.md`](CHANGELOG-DRAFT.md).
+**Status: v2.1 — pushed for testing from Spaces, not a final release.** Live-tested via an LLM-node discussion in Spaces on 2026-11-26 (the LLM followed the gates in order and created 30 nodes itself); a real generation test is still pending. Entry point of the skill: [`SKILL.md`](SKILL.md). Change map from v1 and the reasoning behind it: [`CHANGELOG-DRAFT.md`](CHANGELOG-DRAFT.md).
 
-## Cara membaca draft ini
+## How to read this version
 
-1. `SKILL.md` — gerbang, aturan wajib, tabel adapter (Manual / Spaces / Claude Code / Flow).
-2. `references/` — isi tebal per gerbang (brief, konsep & naskah, cast/set/properti, prompt aset, prompt video, audio, visual presets, verifikasi).
-3. `workflows/` — pacing per format, tanpa angka patok.
-4. `assets/template/` — kerangka berkas proyek baru.
-5. `assets/contoh/satu-scene/` — satu scene lengkap ("Paket Terakhir") yang lolos checker:
+1. `SKILL.md` — gates, mandatory rules, adapter table (Manual / Spaces / Claude Code / Flow).
+2. `references/` — the thick content per gate (brief, concept & script, cast/set/props, asset prompts, video prompts, audio, visual presets, verification).
+3. `workflows/` — pacing per format, with no fixed numbers.
+4. `assets/template/` — skeletons for a new project.
+5. `assets/contoh/satu-scene/` — one complete scene ("Paket Terakhir") that passes the checker:
 
 ```
 python assets/tools/check_prompts.py assets/contoh/satu-scene
 ```
 
-## Prinsip v2 dalam satu kalimat
+## The v2 principle in one sentence
 
-Tulis sekali, salin verbatim, kunci dengan token yang sejalan dengan nama berkas, verifikasi sebelum serah — dan jangan pernah mengasumsikan runtime tempat skill ini berjalan.
+Write once, copy verbatim, lock it with tokens aligned to filenames, verify before handover — and never assume the runtime this skill runs in.

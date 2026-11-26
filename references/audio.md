@@ -1,30 +1,30 @@
-# Audio — gerbang 7 (OST, VO, Foley)
+# Audio — Gate 7 (OST, VO, Foley)
 
-Kelebihan v1 yang dipertahankan dan dipertajam. Output: `epNN/audio.md`.
+A strength of v1, kept and sharpened. Output: `epNN/audio.md`.
 
-## Kapan audio terpisah, kapan tidak
+## When audio is separate, and when it is not
 
-- Tool video target **menggenerate dialog di dalam klip** (mayoritas tool sekarang): dialog tetap di prompt video (blok LANGUAGE + SHOT BREAKDOWN). `audio.md` hanya berisi **skor & SFX untuk tahap edit**, bukan naskah dialog kedua. Menulis dialog di dua tempat dengan kata berbeda = dua versi kebenaran.
-- Adapter **memisahkan audio** (mis. pipeline Spaces: node TTS ElevenLabs + node video tanpa suara): `audio.md` menjadi sumber naskah VO/dialogue untuk node TTS, disalin **verbatim** dari `naskah.md`. Nada pengucapan ditandai di sini, bukan di prompt video.
+- The target video tool **generates dialogue inside the clip** (most tools today): dialogue stays in the video prompt (the `LANGUAGE` block + `SHOT BREAKDOWN`). `audio.md` contains only **score & SFX for the edit stage**, not a second dialogue script. Writing dialogue in two places with different words = two versions of the truth.
+- The adapter **separates audio** (e.g. a Spaces pipeline: an ElevenLabs TTS node + a silent video node): `audio.md` becomes the source of the VO/dialogue script for the TTS node, copied **verbatim** from `naskah.md`. Delivery tone is marked here, not in the video prompt.
 
-Catat mode yang dipakai di kepala `audio.md`.
+Note which mode is used at the head of `audio.md`.
 
-## 1 · Skor / OST (Suno atau sejenisnya)
+## 1 · Score / OST (Suno or similar)
 
-Per cue, bukan per proyek — satu cue per container atau per perubahan emosi besar:
-- `style tags` (≤200 karakter): genre, era, instrumentasi inti, mood — spesifik, bukan "cinematic emotional"
-- BPM & dinamika: di mana swell, di mana drop ke hening
-- Struktur dengan metatag: `[Intro] [Verse] [Instrumental Swell] [Outro]` mengikuti section/beat cerita
-- Larangan: vokal bila cue dimaksudkan instrumental; lirik bila ada ditulis terpisah dan dicek tidak bertabrakan dengan dialog di menit yang sama
+Per cue, not per project — one cue per container or per major emotional shift:
+- `style tags` (≤200 characters): genre, era, core instrumentation, mood — specific, not "cinematic emotional"
+- BPM & dynamics: where it swells, where it drops to silence
+- Structure with metatags: `[Intro] [Verse] [Instrumental Swell] [Outro]` following the story's sections/beats
+- Bans: vocals if the cue is meant to be instrumental; lyrics, if any, are written separately and checked not to collide with dialogue in the same minute
 
-## 2 · VO / dialogue TTS (hanya mode audio terpisah)
+## 2 · VO / TTS dialogue (separate-audio mode only)
 
-- Teks **disalin verbatim** dari `naskah.md` — jangan parafrase untuk TTS.
-- Tag penyampaian per baris: `[softly]`, `[whispering]`, `[hesitant pause]` — hemat, satu tag per baris maksimal.
-- Satu baris = satu unit generate TTS; tandai tokoh + nomor shot asal baris itu supaya sinkronisasi di edit tidak menebak.
+- Text **copied verbatim** from `naskah.md` — do not paraphrase for TTS.
+- One delivery tag per line: `[softly]`, `[whispering]`, `[hesitant pause]` — sparingly, at most one tag per line.
+- One line = one TTS generation unit; mark the character + the shot number the line comes from, so syncing in the edit requires no guessing.
 
 ## 3 · Foley & ambience per shot
 
-Tabel per shot: `Shot | Ambience bed | Foley kunci | Yang sengaja hening`.
-Contoh isian yang benar spesifik: `distant train crossing bell`, `raindrops on vinyl umbrella`, `plastic chair leg scraping tile` — bukan `background sounds`.
-Hening yang disengaja ditulis eksplisit (`— hening total, room tone saja`) supaya editor tidak mengisinya.
+A table per shot: `Shot | Ambience bed | Key foley | Deliberately silent`.
+Correct entries are specific: `distant train crossing bell`, `raindrops on vinyl umbrella`, `plastic chair leg scraping tile` — not `background sounds`.
+Deliberate silence is written explicitly (`— total silence, room tone only`) so the editor does not fill it in.

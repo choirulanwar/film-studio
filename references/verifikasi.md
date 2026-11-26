@@ -1,74 +1,75 @@
-# Verifikasi & serah — gerbang 8
+# Verification & handover — Gate 8
 
-Hampir semua kegagalan film AI adalah kesalahan **teks** yang baru ketahuan setelah kredit terbakar. Gerbang ini menangkapnya sebelum itu.
+Almost every AI film failure is a **text** error that only becomes visible after credits are burned. This gate catches it before that.
 
-## Langkah 1 · Checker mesin
+## Step 1 · Machine checker
 
 ```
-python assets/tools/check_prompts.py <folder proyek>
+python assets/tools/check_prompts.py <project folder>
 ```
 
-Yang dicek versi draft ini: sebelas blok ada & berurutan · frasa wajib (`NOT a montage`, `Never two consecutive shots from the same position`, larangan subtitle, `exactly as written` atau `NO spoken dialogue`, `no freeze frame`) · kata terlarang di dalam blok prompt (rasio, `vertical/horizontal`, `===`, nama berkas, `SCREENPLAY`, resolusi/seed/fps, `8k/masterpiece`) · token di prompt punya baris lampiran · timecode SHOT bersambung dan berakhir di durasi scene.
-Perbaiki sampai lolos. Jangan serahkan proyek yang belum lolos tanpa menyebutkannya.
+What this draft version checks: the eleven blocks exist & are in order · mandatory phrases (`NOT a montage`, `Never two consecutive shots from the same position`, the subtitle ban, `exactly as written` or `NO spoken dialogue`, `no freeze frame`) · banned words inside prompt blocks (ratio, `vertical/horizontal`, `===`, filenames, `SCREENPLAY`, resolution/seed/fps, `8k/masterpiece`) · tokens in prompts have an attachment line · SHOT timecodes run continuously and end at the scene duration.
+Fix until it passes. Do not hand over a project that has not passed without saying so.
 
-## Langkah 2 · Checklist yang tidak bisa dicek mesin
+## Step 2 · Checklist the machine cannot check
 
-- [ ] Salinan blok cast/set/properti **identik huruf per huruf** di semua berkas (checker draft belum memeriksa ini penuh — baca manual dua berkas yang paling jauh: `cast.md` vs prompt terakhir)
-- [ ] Tidak ada dua shot berurutan dari posisi kamera yang sama
-- [ ] `MOVEMENT NOTE` sesuai jumlah orang; >2 orang memecah figuran
-- [ ] Tidak ada beat penting bergantung pada tulisan yang harus dibaca
-- [ ] Hook, arc, set, alasan tokoh tidak bertentangan dengan premis
-- [ ] Detektor klise (`konsep-dan-naskah.md`) sudah dijalankan ke naskah
-- [ ] Genre yang bukan sudah disebut di `VIDEO STYLE & FORMAT` bila premis bisa disalahbaca
-- [ ] Benda berlayar: `screen always angled away from camera` ada di CRITICAL
-- [ ] Tidak ada tanda wajah di blok tokoh, kecuali yang berfungsi cerita
-- [ ] Shot berisiko gerbang 4 tercatat keputusannya di `naskah.md`
-- [ ] Shot lewat celah/kaca tidak menyebut tokoh/kata orang
-- [ ] Ketiadaan benda ditulis sebagai permukaan rata, tanpa kata kontras
-- [ ] Tidak ada benda yang ditegaskan berulang di banyak blok
-- [ ] LIGHTING menyebut sumber + arah + suhu, bukan kata sifat saja
-- [ ] Untuk adapter Spaces: referensi sheet/plate **benar-benar ter-wire** sebagai input node frame/video, bukan hanya disebut di teks
+- [ ] Copies of cast/set/property blocks are **identical letter for letter** in every file (the draft checker does not fully check this yet — read the two furthest-apart files manually: `cast.md` vs the last prompt)
+- [ ] No two consecutive shots from the same camera position
+- [ ] `MOVEMENT NOTE` matches the number of people; >2 people split the extras
+- [ ] No important beat depends on writing that must be read
+- [ ] Hook, arc, set, character motivations do not contradict the premise
+- [ ] The cliché detector (`konsep-dan-naskah.md`) has been run on the script
+- [ ] The genre it is NOT has been stated in `VIDEO STYLE & FORMAT` if the premise can be misread
+- [ ] Screen-bearing objects: `screen always angled away from camera` is in CRITICAL
+- [ ] No face marks in character blocks, except story-functional ones
+- [ ] Gate 4 risky shots have their decisions recorded in `naskah.md`
+- [ ] Shots through gaps/glass do not mention characters/words about people
+- [ ] An object's absence is written as a flat surface, without contrast words
+- [ ] No object is asserted repeatedly across many blocks
+- [ ] LIGHTING states source + direction + temperature, not adjectives alone
+- [ ] For the Spaces adapter: sheet/plate references are **actually wired** as inputs to the frame/video nodes, not only mentioned in text
 
-## Gejala → penyebab (untuk repair)
+## Symptom → cause (for repair)
 
-| Gejala di hasil generate | Penyebab paling mungkin di teks/wiring |
+| Symptom in the generation result | Most likely cause in the text/wiring |
 |---|---|
-| Wajah berubah antar klip | Blok tokoh diparafrase di satu berkas · sheet salah lampir (token ≠ nama berkas) · referensi tidak ter-wire (Spaces) / tidak dilampirkan (manual) |
-| Wajah aneh: codet, bisul, tanda besar | Tanda kecil di blok tokoh dilebih-lebihkan model — hapus bila tak berfungsi cerita |
-| Teks aneh / huruf acak di layar | Header manusia ikut ke-copy · label/plat/layar tidak diberi larangan teks · layar menghadap kamera |
-| Dialog bahasa/diksi meleset, ditambah, diparafrase | Blok LANGUAGE hilang / frasa `exactly as written` terhapus |
-| Narasi/gumaman di scene hening | LANGUAGE tidak memakai bentuk `NO spoken dialogue` |
-| Figuran gerak serempak | MOVEMENT NOTE hilang / tidak melarang eksplisit |
-| Orang asing muncul di tempat sepi | CRITICAL tidak mengunci jumlah orang |
-| Hasil terasa montase/trailer | Penegasan `ONE continuous ... NOT a montage` hilang dari blok 1 |
-| Potongan monoton | Dua shot seposisi berurutan / aturan posisi beda tidak ditulis |
-| Frame datar | LIGHTING kata sifat tanpa sumber & arah |
-| Benda hilang/pindah/dobel antar potongan | Tidak ada butir CONTINUITY (posisi persis + shot terlihat) |
-| Tokoh bocor ke sisi pintu yang salah | >1 plate tanpa peta referensi + tag lokasi + CONTINUITY sekaligus |
-| Wajah muncul di shot celah/kaca | Baris shot itu menyebut tokoh/kata orang/larangan orang |
-| Pintu yang ditegaskan `stays closed` malah dibuka | Penegasan ditumpuk di banyak blok — kurangi, tulis sekali di CONTINUITY |
-| Sheet panel badan tanpa kepala / wajah beda antar panel | Daftar Avoid sheet tidak lengkap (`missing head`, `different faces between panels`) |
+| Face changes between clips | A character block was paraphrased in one file · the wrong sheet attached (token ≠ filename) · reference not wired (Spaces) / not attached (manual) |
+| Strange face: gash, boil, oversized mark | A small mark in the character block exaggerated by the model — remove it if it has no story function |
+| Strange text / random letters on screen | A human header got copied in · labels/plates/screens not given a text ban · a screen facing the camera |
+| Dialogue language/wording off, added, paraphrased | The LANGUAGE block missing / the `exactly as written` phrase deleted |
+| Narration/mumbling in a silent scene | LANGUAGE does not use the `NO spoken dialogue` form |
+| Extras moving in unison | MOVEMENT NOTE missing / does not ban it explicitly |
+| A stranger appears in an empty place | CRITICAL does not lock the number of people |
+| The result feels like a montage/trailer | The `ONE continuous ... NOT a montage` assertion missing from block 1 |
+| Monotonous cuts | Two consecutive shots from the same position / the different-position rule not written |
+| Flat frame | LIGHTING adjectives without source & direction |
+| Object disappears/moves/duplicates between cuts | No CONTINUITY item (exact position + shots visible) |
+| Character leaks to the wrong side of a door | >1 plate without reference map + location tags + CONTINUITY together |
+| A face appears in a gap/glass shot | That shot's line mentions the character/words about people/a ban on people |
+| A door asserted `stays closed` gets opened anyway | The assertion stacked across many blocks — reduce it, write it once in CONTINUITY |
+| Sheet body panel headless / faces differ between panels | The sheet's Avoid list incomplete (`missing head`, `different faces between panels`) |
+| `ERROR unknown` at session start (Spaces) | The LLM called shell/read/filesystem tools, which do not exist in Spaces — everything must live in chat/text nodes; return to the Spaces adapter rule and continue without file tools |
 
-## Setelah user generate — repair loop
+## After the user generates — repair loop
 
-1. **Bedah dulu, jangan menebak.** Cocokkan titik potong & isi video dengan timecode prompt; transkrip dialog bila bisa. Pastikan dulu versinya benar: prompt versi mana, model apa, rasio apa, referensi apa.
-2. **Pisahkan plot hole dari penyimpangan.** Sudut beda tapi cerita utuh = bukan masalah. Pintu terbuka di cerita "pintu tak pernah dibuka" = masalah.
-3. **Perbaiki 1–2 kalimat yang menyasar penyebab** (pakai tabel di atas). Simpan sebagai versi baru (`prompt-video-v2.md`), jangan timpa yang lama.
-4. **Uji dengan syarat sama:** model, rasio, referensi sama.
-5. **Memburuk → rollback.** Jangan menumpuk perbaikan.
-6. **Bertahan 2 putaran = batas model, bukan batas teks.** Tawarkan ganti shot (alternatif shot berisiko) atau ganti model.
+1. **Dissect first, do not guess.** Match the cut points & video content against the prompt's timecodes; transcribe the dialogue if possible. First make sure the version is right: which prompt version, which model, which ratio, which references.
+2. **Separate plot holes from deviations.** A different angle but an intact story = not a problem. A door opening in a "the door never opens" story = a problem.
+3. **Fix the 1–2 sentences that target the cause** (use the table above). Save as a new version (`prompt-video-v2.md`), do not overwrite the old one.
+4. **Test under identical conditions:** same model, ratio, references.
+5. **Worse → roll back.** Do not stack fixes.
+6. **Survives 2 rounds = the model's limit, not the text's limit.** Offer a different shot (a risky-shot alternative) or a different model.
 
-## Bentuk serah
+## Handover shape
 
-Daftar berkas + urutan pakai + **kelemahan yang masih diketahui** (scene yang shot-nya tipis, dua wardrobe terlalu mirip, shot berisiko yang dipertahankan user). Lebih baik user tahu sebelum generate.
+A file list + usage order + **known remaining weaknesses** (a scene whose shots are thin, two wardrobes too similar, a risky shot the user kept). Better the user knows before generating.
 
 ```markdown
-Selesai, checker lolos. Berkasnya:
-<pohon berkas proyek>
+Done, checker passed. The files:
+<project file tree>
 
-Urutan pakai:
-1. Generate aset `prompt-aset.md`, simpan persis dengan nama berkas di judulnya.
-2. Generate frame start/end (bila ada), lalu video per scene di `prompt-video.md` dengan lampiran di judul scene.
-3. Atur rasio & durasi di tool sebelum generate.
-4. Skor/SFX dari `audio.md` dipasang di edit.
+Usage order:
+1. Generate the assets in `prompt-aset.md`, save them with exactly the filenames in their headings.
+2. Generate start/end frames (if any), then the video per scene in `prompt-video.md` with the attachments in the scene headings.
+3. Set ratio & duration in the tool before generating.
+4. Score/SFX from `audio.md` are added in the edit.
 ```

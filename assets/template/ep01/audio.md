@@ -1,13 +1,13 @@
 # Audio — <container 01>
 
-Mode: <dialog di dalam klip (audio.md = skor & SFX untuk edit) / audio terpisah (audio.md = sumber TTS verbatim dari naskah.md)>
+Mode: <dialogue inside the clip (audio.md = score & SFX for the edit) / separate audio (audio.md = verbatim TTS source from naskah.md)>
 
-## Skor / OST cues
-- Cue 1 (<shot/scene …>): style tags <≤200 char> · BPM <…> · struktur [Intro]…[Outro] · larangan: <…>
+## Score / OST cues
+- Cue 1 (<shot/scene …>): style tags <≤200 chars> · BPM <…> · structure [Intro]…[Outro] · prohibited: <…>
 
-## VO / dialogue TTS (hanya mode audio terpisah)
-- <Tokoh, shot …> [tag penyampaian]: "<teks verbatim dari naskah.md>"
+## VO / dialogue TTS (separate-audio mode only)
+- <Character, shot …> [delivery tag]: "<verbatim text from naskah.md>"
 
 ## Foley & ambience
-| Shot | Ambience bed | Foley kunci | Hening sengaja |
+| Shot | Ambience bed | Key foley | Intentional silence |
 |---|---|---|---|

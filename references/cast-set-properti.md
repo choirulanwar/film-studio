@@ -1,28 +1,28 @@
-# Cast, set & properti bible — gerbang 3
+# Cast, set & property bible — Gate 3
 
-Gerbang ini menentukan konsisten atau tidaknya wajah, ruangan, dan benda di seluruh proyek. Mekanismenya bukan sihir: **satu teks ditulis sekali, lalu disalin identik ke mana pun ia dipakai.**
+This gate decides whether faces, rooms, and objects stay consistent across the whole project or not. The mechanism is not magic: **one text written once, then copied identically everywhere it is used.**
 
-## Aturan salin verbatim (inti v2)
+## The verbatim-copy rule (the core of v2)
 
-> Tulis sekali di `cast.md` / `set.md`, lalu **salin — jangan ketik ulang, jangan ringkas, jangan parafrase.**
-> "Rambut cepak hitam" dan "rambut pendek hitam" adalah dua orang berbeda bagi model.
-> Checker gerbang 8 menolak proyek yang salinannya tidak identik.
+> Write it once in `cast.md` / `set.md`, then **copy it — do not retype it, do not shorten it, do not paraphrase it.**
+> "Rambut cepak hitam" and "rambut pendek hitam" are two different people to the model.
+> The Gate 8 checker rejects projects whose copies are not identical.
 
-`bible.json` adalah salinan terstruktur dari isi yang sama (id, token, nama berkas, preset terkunci) untuk adapter yang membutuhkannya. Kalau bible teks dan `bible.json` beda, **bible teks yang benar**.
+`bible.json` is a structured copy of the same content (id, token, filename, locked presets) for adapters that need it. If the text bible and `bible.json` differ, **the text bible is correct**.
 
-## Tokoh — dua bentuk
+## Characters — two forms
 
-### Bentuk panjang (untuk prompt sheet, gerbang 5)
+### Long form (for the sheet prompt, Gate 5)
 
-Urutan wajib:
-1. Kebangsaan & jenis kelamin
-2. Usia & tinggi
-3. Warna kulit
-4. Rambut: panjang, warna, tatanan
-5. Bentuk wajah/rahang
-6. Bangun badan
+Mandatory order:
+1. Nationality & gender
+2. Age & height
+3. Skin tone
+4. Hair: length, colour, styling
+5. Face/jaw shape
+6. Build
 
-Lalu `WARDROBE:` per item (warna + bahan + detail pembeda), lalu `NADA TUBUH:` satu kalimat cara ia berdiri/bergerak (dipakai ulang di `MOVEMENT NOTE`).
+Then `WARDROBE:` item by item (colour + material + distinguishing detail), then `BODY LANGUAGE:` — one sentence on how they stand/move (reused in `MOVEMENT NOTE`). In the Indonesian worked example below this label appears as `NADA TUBUH:` — same field.
 
 ```
 [SARI] — bentuk panjang
@@ -33,45 +33,45 @@ cargo trousers, worn white sneakers, a small black waist pouch.
 NADA TUBUH: cepat dan hemat gerak, selalu berdiri miring siap berangkat, jarang diam lebih dari dua detik.
 ```
 
-### Tanpa tanda di wajah
+### No marks on the face
 
-Jangan beri tokoh bekas luka, tahi lalat, tato, tindik, atau tanda kecil lain sebagai "jangkar". Model selalu melebih-lebihkannya (luka 1 cm jadi codet) dan tandanya berpindah sisi antar generate. Wajah dikunci **gambar sheet**; tokoh dibedakan lewat usia, tinggi, rambut, bangun badan, kacamata, dan terutama wardrobe.
-Pengecualian tunggal: tanda yang **punya fungsi cerita** (ditanam dan dibayar di naskah). Syarat: ditulis kecil/halus (`a small, faint ...`), sisinya disebut, dan diulang eksplisit di blok `CRITICAL` prompt video.
+Do not give a character scars, moles, tattoos, piercings, or other small marks as an "anchor". The model always exaggerates them (a 1 cm scar becomes a gash) and the mark changes sides between generations. The face is locked by the **sheet image**; characters are distinguished by age, height, hair, build, glasses, and above all wardrobe.
+The single exception: a mark that **has a story function** (planted and paid off in the script). Requirements: written small/faint (`a small, faint ...`), its side stated, and repeated explicitly in the `CRITICAL` block of the video prompt.
 
-### Bentuk pendek (untuk blok CHARACTERS prompt video)
+### Short form (for the CHARACTERS block of the video prompt)
 
-Satu baris: nama, token, usia, wardrobe ringkas, aktivitas di scene itu. Deskripsi fisik lengkap **tidak** diulang — gambar referensi yang mengunci wajah; mengulang deskripsi panjang bisa bertabrakan dengan gambarnya.
+One line: name, token, age, condensed wardrobe, activity in this scene. The full physical description is **not** repeated — the reference image locks the face; repeating a long description can collide with the image.
 
 ```
 SARI [gambar_sari] — 34, faded mustard-yellow courier vest over a grey long-sleeve
 t-shirt, black cargo trousers, holding a small cardboard package at the gate.
 ```
 
-Bagian aktivitas berubah per scene; bagian wardrobe tidak, kecuali varian di bawah.
+The activity part changes per scene; the wardrobe part does not, except for the variants below.
 
-### Wardrobe varian
+### Wardrobe variants
 
-Tokoh ganti baju di container lain: jangan timpa. Tambahkan `WARDROBE B (ep 4-6): ...`, buat sheet baru, token dibedakan `[gambar_sari_b]`.
+A character changes clothes in another container: do not overwrite. Add `WARDROBE B (ep 4-6): ...`, make a new sheet, distinguish the token `[gambar_sari_b]`.
 
-## Token & nama berkas (harus sejalan)
+## Tokens & filenames (must line up)
 
-| Entitas | Token | Nama berkas |
+| Entity | Token | Filename |
 |---|---|---|
-| Tokoh Sari | `[gambar_sari]` | `sari_sheet.png` |
-| Lokasi Teras | `[gambar_teras]` | `teras_plate.png` |
-| Properti Motor | `[gambar_motor]` | `motor_plate.png` |
+| Character Sari | `[gambar_sari]` | `sari_sheet.png` |
+| Location Teras | `[gambar_teras]` | `teras_plate.png` |
+| Property Motor | `[gambar_motor]` | `motor_plate.png` |
 
-Pola: `<nama>_sheet.png` (tokoh) / `<nama>_plate.png` (set & properti), `<nama>` sama persis dengan token setelah `gambar_`. User mencari berkas dari token; kalau beda, salah lampir, wajah tertukar.
+Pattern: `<name>_sheet.png` (characters) / `<name>_plate.png` (sets & properties), where `<name>` is exactly the token after `gambar_`. The user finds files from the token; if they differ, the wrong file gets attached and faces get swapped.
 
-## Set — satu blok per lokasi
+## Sets — one block per location
 
-Wajib memuat:
-1. Jenis ruang & di mana
-2. Satu elemen arsitektur besar penentu komposisi
-3. Furnitur utama (+ jumlah bila penting)
-4. Material lantai (menentukan pantulan cahaya)
-5. **Satu benda ganjil** penanda ruangan itu
-6. **Semua pintu & jalan masuk yang dipakai tokoh di arc** — siapa masuk/keluar dari mana. Pintu yang tidak tertulis akan dikarang model, berbeda tiap klip.
+Must contain:
+1. Room type & where it is
+2. One large architectural element that determines the composition
+3. Main furniture (+ counts where they matter)
+4. Floor material (it determines how light reflects)
+5. **One odd object** that marks that room
+6. **Every door & entry point characters use in the arc** — who enters/exits from where. A door that is not written down will be invented by the model, differently in every clip.
 
 ```
 [TERAS] [gambar_teras]
@@ -81,16 +81,16 @@ floor. A single plastic chair and a dry potted plant beside the door. Entry poin
 the sliding door (from the living room) and the fence gate (from the lane).
 ```
 
-## Properti — dikunci seperti tokoh
+## Properties — locked like characters
 
-Benda/kendaraan yang muncul di >1 shot dan bisa berubah bentuk antar klip.
+Objects/vehicles that appear in >1 shot and could change shape between clips.
 
-| Jenis | Kapan | Bentuk |
+| Type | When | Form |
 |---|---|---|
-| Berpelat | bentuk rumit: kendaraan, perabot khas | blok teks + token + prompt plate (gerbang 5) |
-| Teks saja | benda kecil sederhana: kardus, gelas, foto | blok teks saja, disalin identik |
+| With a plate | complex shapes: vehicles, distinctive furniture | text block + token + plate prompt (Gate 5) |
+| Text only | small simple objects: a box, a glass, a photo | text block only, copied identically |
 
-Untuk benda yang di dunia nyata bertulisan (label paket, plat nomor, merek): tulis larangannya **di dalam bloknya** — `no labels, no printed text, no logos`, `licence plate blank`.
+For objects that carry writing in the real world (package labels, licence plates, brands): write the ban **inside their block** — `no labels, no printed text, no logos`, `licence plate blank`.
 
 ```
 [PAKET] — teks saja
@@ -98,16 +98,16 @@ small brown cardboard box, roughly shoebox size, wrapped in clear packing tape, 
 labels, no printed text, no logos
 ```
 
-Di prompt video, properti ditulis di blok `LOCATION` setelah lokasinya; yang harus bertahan antar potongan naik ke `CONTINUITY`.
+In the video prompt, properties are written in the `LOCATION` block after their location; ones that must persist across cuts move up into `CONTINUITY`.
 
 ## Visual lock
 
-Di gerbang ini juga kunci, dari `references/visual-presets.md`:
-- tepat **satu** `color_preset_id`
-- tepat **satu** `lens_preset_id` (lensa dasar; lensa per shot tetap ditulis di SHOT BREAKDOWN)
+At this gate, also lock, from `references/visual-presets.md`:
+- exactly **one** `color_preset_id`
+- exactly **one** `lens_preset_id` (the base lens; the per-shot lens is still written in SHOT BREAKDOWN)
 
-Tulis keduanya di `cast.md`/`bible.json`. Preset tidak diganti di tengah proyek tanpa mencatatnya sebagai revisi bible dan menulis ulang prompt yang sudah jadi.
+Write both in `cast.md`/`bible.json`. Presets are not changed mid-project without recording it as a bible revision and rewriting the prompts already made.
 
-## Melanjutkan proyek lama
+## Continuing an old project
 
-Baca bible yang ada, pakai apa adanya. Tambah tokoh/lokasi di bawah yang lama. Jangan pernah menulis ulang blok lama — penulisan ulang = wajah baru.
+Read the existing bible, use it as-is. Add characters/locations below the old ones. Never rewrite an old block — rewriting = a new face.

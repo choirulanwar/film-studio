@@ -1,10 +1,10 @@
-# Workflow: Long-form — film fitur & seri multi-episode
+# Workflow: Long-form — feature films & multi-episode series
 
-Rasio, durasi, dan jumlah act/episode dari `brief.md`. Tidak ada patok 16:9 / 2.39:1 / klip 5–10 detik seperti v1.
+Aspect ratio, duration, and number of acts/episodes come from `brief.md`. There are no fixed 16:9 / 2.39:1 / 5–10-second clip defaults like v1 had.
 
-## Aturan kerja
+## Working rules
 
-1. **Inkremental:** kerjakan satu container (act/episode) dalam satu lintasan gerbang 4–8. Jangan menulis semua episode sekaligus. Setelah satu container selesai, perbarui `rolling_summary` dan status container di `bible.json`.
-2. **Override per scene, bukan entitas baru:** perubahan waktu, cuaca, atau wardrobe dicatat sebagai override di level scene (`wardrobe_override`, `lighting_override` di `bible.json`) dengan `character_id`/`location_id` tetap. Wardrobe yang berulang lintas container naik kelas jadi wardrobe varian di bible (gerbang 3).
-3. **Ruang bernapas:** selingi dialog dengan establishing, insert benda kunci, dan jeda atmosferik — ditandai eksplisit di naskah sebagai shot tanpa dialog, bukan dibiarkan kosong.
-4. **Arc vs container:** `konsep.md` memegang arc keseluruhan; tiap container wajib menggerakkan arc (keadaan tokoh/pengetahuan penonton berubah), bukan episode pengisi. Cek ini di gerbang 4 sebelum shot list ditulis.
+1. **Incremental:** work on one container (act/episode) in a single pass through gates 4–8. Do not write all episodes at once. After one container is finished, update `rolling_summary` and the container status in `bible.json`.
+2. **Per-scene overrides, not new entities:** changes in time, weather, or wardrobe are recorded as scene-level overrides (`wardrobe_override`, `lighting_override` in `bible.json`) with the same `character_id`/`location_id`. A wardrobe that recurs across containers is promoted to a wardrobe variant in the bible (gate 3).
+3. **Breathing room:** interleave dialogue with establishing shots, inserts of key objects, and atmospheric pauses — marked explicitly in the script as no-dialogue shots, not left blank.
+4. **Arc vs container:** `konsep.md` holds the overall arc; every container must move the arc (a character's state or the audience's knowledge changes), not be a filler episode. Check this at gate 4 before the shot list is written.

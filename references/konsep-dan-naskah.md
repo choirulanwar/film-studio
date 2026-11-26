@@ -1,62 +1,64 @@
-# Konsep & naskah — gerbang 2 dan 4
+# Concept & script — Gates 2 and 4
 
-## Gerbang 2 · Konsep
+## Gate 2 · Concept
 
-Output `konsep.md` wajib memuat:
+The `konsep.md` output must contain:
 
-1. **Logline** — satu kalimat: siapa, mau apa, apa halangannya, apa taruhannya.
-2. **Premis 3 baris** — baris ke-3 wajib memuat **satu detail meleset** (sesuatu yang tidak pas dan bikin penasaran) dan **satu aturan tokoh** (kebiasaan/larangan tokoh yang akan menghasilkan adegan, bukan sekadar sifat).
-3. **Arc per container** — untuk seri: satu baris per episode (keadaan awal → peristiwa → cliffhanger). Untuk long-form: per babak. Untuk MV: per section lagu.
-4. **3 hook alternatif dengan rumus berbeda** — contoh rumus: (a) pertanyaan visual yang belum terjawab, (b) tindakan yang konsekuensinya belum terlihat, (c) kedatangan/kepergian yang mengubah status quo. User memilih satu; jangan menggabungkan ketiganya jadi satu hook yang ramai.
+1. **Logline** — one sentence: who, what they want, what blocks them, what is at stake.
+2. **Premise in 3 lines** — line 3 must contain **one detail that is off** (something that does not fit and makes you curious) and **one character rule** (a habit/prohibition of the character that will produce scenes, not just a trait).
+3. **Arc per container** — for a series: one line per episode (starting state → event → cliffhanger). For long-form: per act. For an MV: per song section.
+4. **3 alternative hooks with different formulas** — example formulas: (a) an unanswered visual question, (b) an action whose consequence is not yet seen, (c) an arrival/departure that changes the status quo. The user picks one; do not merge all three into one crowded hook.
 
-### Cek sebelum setor (wajib, diam-diam)
+### Check before presenting (mandatory, silently)
 
-- Hook dan arc **tidak bertentangan** dengan premis (tokoh yang "tidak pernah membuka pintu" tidak boleh membuka pintu di arc ep.1 tanpa itu memang titik ceritanya).
-- **Tidak ada beat penting yang bergantung pada tulisan yang harus dibaca** — nama di label paket, chat di layar HP, papan nama. AI video tidak bisa merender tulisan dengan andal dan prompt kita melarang teks layar. Sampaikan beat itu lewat gambar, benda, atau suara.
-- Genre yang bukan: kalau premis bisa disalahbaca model (rumah sepi, mengintip, orang tua diam) catat di konsep genre yang harus dilarang nanti di blok `VIDEO STYLE & FORMAT` (mis. `NOT horror`).
+- The hook and arc **do not contradict** the premise (a character who "tidak pernah membuka pintu" must not open the door in the ep.1 arc unless that is the point of the story).
+- **No important beat depends on writing that must be read** — a name on a package label, a chat on a phone screen, a name board. AI video cannot render text reliably and our prompts ban on-screen text. Deliver that beat through image, object, or sound.
+- The genre it is NOT: if the premise can be misread by the model (an empty house, peeking, a silent elderly person), note in the concept the genre that must later be banned in the `VIDEO STYLE & FORMAT` block (e.g. `NOT horror`).
+- Scan for any object/event that has no cause in the premise and is never paid off in the script (a coin from a future year, a sound with no source, an object that appears exactly once). If found, delete it or make it a deliberate part of the premise/arc — never let it slip in.
 
-### Anti-generik (detektor klise)
+### Anti-generic (cliché detector)
 
-Tolak dan tulis ulang bila konsep/naskah mengandung salah satu ini tanpa putaran baru:
+Reject and rewrite if a concept/script contains any of these without a new twist:
 
-- Tokoh "menyimpan rahasia besar" yang tidak pernah dispesifikkan di konsep.
-- Dialog penjelasan: tokoh mengucapkan hal yang kedua tokoh sudah tahu, demi penonton.
-- Dialog sinetron: seruan berulang, panggilan nama di tiap baris, ancaman yang diucapkan bukan dilakukan.
-- Kebetulan yang menyelesaikan masalah (yang menolong boleh kebetulan; yang menyelesaikan tidak).
-- Montase "waktu berlalu" sebagai pengganti adegan.
-- Akhir episode berupa tokoh menatap kamera / membelalak saja, tanpa perubahan keadaan.
+- A character "keeping a big secret" that is never specified in the concept.
+- Exposition dialogue: a character says something both characters already know, for the audience's sake.
+- Soap-opera dialogue: repeated exclamations, names called in every line, threats spoken instead of done.
+- A coincidence that solves the problem (the helper may be a coincidence; the solution may not).
+- A "time passes" montage as a substitute for a scene.
+- An episode ending that is just a character staring at the camera / eyes widening, with no change of state.
 
-Uji dialog: baca keras-keras. Kalau satu baris bisa diucapkan tokoh mana pun di cerita mana pun, baris itu generik — tulis ulang dengan detail milik tokoh ini (pekerjaannya, benda di tangannya, alamatnya).
+Dialogue test: read it aloud. If a line could be spoken by any character in any story, that line is generic — rewrite it with details belonging to this character (their job, the object in their hand, their address).
 
-## Gerbang 4 · Naskah + shot list
+## Gate 4 · Script + shot list
 
-Output `epNN/naskah.md` (long-form: `actNN/` boleh digabung per episode; MV: per section):
+Output `epNN/naskah.md` (long-form: `actNN/` may be combined per episode; MV: per section):
 
-1. **Naskah dialog lengkap** — bisa dibaca sebagai cerita tanpa melihat prompt-nya.
-2. **Rundown per shot** — nomor shot, durasi, ukuran/lensa, posisi kamera fisik, aksi, dialog (atau keterangan eksplisit tanpa dialog).
-3. **Pembagian scene** — satu scene = satu prompt video = satu kali generate.
+1. **Complete dialogue script** — readable as a story without looking at its prompts.
+2. **Rundown per shot** — shot number, duration, size/lens, physical camera position, action, dialogue (or an explicit note of no dialogue).
+3. **Scene division** — one scene = one video prompt = one generation.
 
-### Pemecahan scene
+### Scene splitting
 
-- Satuan durasi mengikuti tool target di `brief.md`. Tanpa tool spesifik: **4–30 detik** per generate.
-- Episode/container lebih panjang dari satuan itu dipecah **mengikuti beat** (mis. 60 detik → 30+30, atau 20+20+20), **tidak pernah di tengah dialog**, dan **pindah lokasi selalu scene baru**.
-- Timecode tiap prompt selalu mulai dari `00:00` — tiap generate berdiri sendiri.
-- Total durasi dicek ke `brief.md`. Kelebihan dilaporkan dengan tawaran shot yang dipotong; jangan memotong diam-diam.
+- The duration unit follows the target tool in `brief.md`. With no specific tool: **4–30 seconds** per generation.
+- Before writing scene durations, check the durations the target tool supports (from the brief). If a scene needs a duration outside those options (e.g. Omni only offers 3/5/8/10s), split the scene at a beat into several generations with supported durations — never write a duration the node cannot select. The duration in the node title, in the prompt, and in the node settings must all three be identical.
+- A container/episode longer than that unit is split **at beats** (e.g. 60 seconds → 30+30, or 20+20+20), **never mid-dialogue**, and **a location change is always a new scene**.
+- The timecode in every prompt always starts at `00:00` — each generation stands alone.
+- Total duration is checked against `brief.md`. Overruns are reported with an offer of which shots to cut; never cut silently.
 
-### Shot berisiko — tandai, laporkan, user yang memutuskan
+### Risky shots — flag them, report them, the user decides
 
-| Risiko | Kenapa gagal | Alternatif yang ditawarkan |
+| Risk | Why it fails | Alternative offered |
 |---|---|---|
-| Tempat yang sama dari dua sisi (pintu, pagar, jendela) | Tokoh bocor ke sisi yang salah | Satu sisi saja + suara dari sisi lain; atau peta referensi + tag lokasi + CONTINUITY (gerbang 6) |
-| Shot lewat celah, kaca, jendela | Model menanam wajah/benda di celah; kaca jadi bening | Tulis hanya yang terlihat; plate dari sudut celah itu sendiri |
-| Sudut kamera yang tidak ada di plate | Model mengarang geometri ruangan | Buat plate tambahan dari sudut itu, atau ubah posisi kamera ke sudut plate |
-| Benda harus bertahan antar potongan | Benda hilang/pindah/dobel | Blok CONTINUITY (maks. 3 benda) |
-| Close-up tanpa wajah dekat momen dialog | Model menambah baris dialog / mulut dari tokoh lain | Geser dialog ke shot dengan wajah, atau tandai shot itu eksplisit tanpa dialog |
-| Kerumunan bereaksi bersama | Gerak serempak seperti paduan suara | MOVEMENT NOTE memecah reaksi (gerbang 6) |
-| Tulisan harus terbaca | Render jadi huruf acak | Ubah beat: tulisan disampaikan lewat suara/gambar |
+| The same place from two sides (door, fence, window) | The character leaks to the wrong side | One side only + sound from the other side; or a reference map + location tags + CONTINUITY (Gate 6) |
+| A shot through a gap, glass, window | The model plants a face/object in the gap; glass turns transparent | Write only what is visible; a plate from that gap's own angle |
+| A camera angle that does not exist in the plate | The model invents the room's geometry | Make an additional plate from that angle, or move the camera position to the plate's angle |
+| An object must persist across cuts | The object disappears/moves/duplicates | A CONTINUITY block (max. 3 objects) |
+| A close-up with no face near a dialogue moment | The model adds dialogue lines / a mouth from another character | Move the dialogue to a shot with a face, or mark that shot explicitly as no-dialogue |
+| A crowd reacting together | Movement in unison like a choir | The MOVEMENT NOTE splits the reactions (Gate 6) |
+| Writing that must be readable | It renders as random letters | Change the beat: the writing is delivered through sound/image |
 
-Daftar shot berisiko ditulis di akhir `naskah.md` beserta keputusan user (dipertahankan / diganti).
+The list of risky shots is written at the end of `naskah.md` together with the user's decision (kept / replaced).
 
 ### Blocking vs set
 
-Kalau blocking butuh pintu, jendela, atau elemen ruang yang belum ada di `set.md`, **tambahkan sekarang** (penambahan saja, jangan ubah blok lama) dan catat sebagai revisi di `set.md` — sebelum prompt ditulis.
+If the blocking needs a door, window, or room element that is not yet in `set.md`, **add it now** (addition only, never change old blocks) and note it as a revision in `set.md` — before any prompt is written.

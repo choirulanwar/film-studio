@@ -1,23 +1,23 @@
-# Konsep — <judul proyek>
+# Concept — <project title>
 
 ## Logline
-<siapa, mau apa, halangannya, taruhannya — satu kalimat>
+<who, what they want, the obstacle, the stakes — one sentence>
 
-## Premis (3 baris)
-1. <keadaan awal>
-2. <peristiwa penggerak>
-3. <satu detail meleset> + <satu aturan tokoh>
+## Premise (3 lines)
+1. <initial state>
+2. <inciting event>
+3. <one detail that is off> + <one character rule>
 
 ## Arc per container
-- <container 1>: <awal → peristiwa → cliffhanger/resolusi>
+- <container 1>: <start → event → cliffhanger/resolution>
 
-## Hook alternatif (user memilih satu)
-1. <rumus: pertanyaan visual>
-2. <rumus: tindakan, konsekuensi belum terlihat>
-3. <rumus: kedatangan/kepergian>
+## Alternative hooks (the user picks one)
+1. <formula: visual question>
+2. <formula: an action whose consequence is not yet seen>
+3. <formula: an arrival/departure>
 
-## Genre yang dilarang (bila premis bisa disalahbaca)
-<mis. NOT horror — atau: tidak ada>
+## Forbidden genres (if the premise could be misread)
+<e.g. NOT horror — or: none>
 
-## Persetujuan
-- Dipilih user: hook nomor <…>, tanggal <…>
+## Approval
+- Chosen by user: hook number <…>, date <…>

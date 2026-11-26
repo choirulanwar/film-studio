@@ -1,15 +1,15 @@
-# Workflow: Micro-drama & seri vertikal
+# Workflow: Micro-drama & vertical series
 
-Semua angka di workflow ini adalah **pertanyaan brief, bukan default**: rasio, durasi per episode, jumlah episode, dan satuan generate mengikuti `brief.md` + tool target. v1 mematok 9:16 / 60–90 detik / klip 3–5 detik — dicabut.
+Every number in this workflow is a **brief question, not a default**: aspect ratio, duration per episode, episode count, and generation unit all follow `brief.md` + the target tool. v1 fixed 9:16 / 60–90 seconds / 3–5-second clips — removed.
 
-## Pacing (relatif, bukan angka patok)
+## Pacing (relative, not fixed numbers)
 
-1. **Hook di shot pertama:** buka *in media res* — ketegangan, pertanyaan visual, atau kedatangan yang belum jelas — dalam detik-detik pertama episode, berapa pun durasi satuan generatenya.
-2. **Perubahan berkala:** setiap beberapa detik harus ada pergeseran visual, reaksi, atau informasi baru; jaraknya mengikuti durasi episode dari brief (episode pendek = lebih rapat).
-3. **Cliffhanger akhir episode:** keadaan **berubah** di detik terakhir (kedatangan, penemuan, keputusan) — bukan sekadar ekspresi kaget. Pertanyaan yang ditinggalkan harus spesifik.
-4. **Porsi atmosfer:** shot hening/atmosferik boleh ada (v1 menyarankan 20–30%) tapi sebagai **keputusan sadar per episode** yang dicatat di naskah, bukan kuota otomatis.
-5. **Keselamatan & platform:** konflik/peril disampaikan lewat ketegangan, framing, dan suara, bukan kekerasan eksplisit — sesuaikan dengan aturan platform tujuan dari brief bila disebut.
+1. **Hook in the first shot:** open *in media res* — tension, a visual question, or an arrival that is not yet clear — within the first seconds of the episode, whatever the duration of the generation unit.
+2. **Regular change:** every few seconds there must be a visual shift, a reaction, or new information; the spacing follows the episode duration from the brief (shorter episode = tighter).
+3. **End-of-episode cliffhanger:** the state **changes** in the final second (an arrival, a discovery, a decision) — not just a shocked expression. The question left behind must be specific.
+4. **Atmosphere portion:** quiet/atmospheric shots are allowed (v1 suggested 20–30%) but as a **conscious per-episode decision** recorded in the script, not an automatic quota.
+5. **Safety & platform:** conflict/danger is conveyed through tension, framing, and sound, not explicit violence — adjust to the target platform's rules from the brief if stated.
 
-## Bible lintas episode
+## Cross-episode bible
 
-Cast/set/properti episode 1 dipakai ulang verbatim. Episode baru hanya menambah aset baru (gerbang 5 menulis baris "pakai ulang"). `rolling_summary` di `bible.json` diperbarui tiap episode selesai: satu-dua kalimat keadaan terakhir tiap tokoh & pertanyaan terbuka.
+Episode 1's cast/set/props are reused verbatim. A new episode only adds new assets (gate 5 writes a "Reuse" line). `rolling_summary` in `bible.json` is updated each time an episode is finished: one or two sentences on each character's latest state & the open questions.

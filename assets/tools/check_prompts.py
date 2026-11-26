@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""film-studio v2 — checker gerbang 8 (draft).
+"""film-studio v2 — gate-8 checker (draft).
 
 Usage: python check_prompts.py <project-folder>
 Checks every prompt-video.md under the folder:
   - eleven blocks present and in order (CONTINUITY optional, between LOCATION and AUDIO)
   - required phrases
   - banned words inside prompt blocks
-  - tokens used in a prompt have a matching file on a 'Lampirkan:' line above it
+  - tokens used in a prompt have a matching file on an 'Attach:' line above it (legacy 'Lampirkan:' also accepted)
   - SHOT timecodes are contiguous and end at the scene duration
 Exit code 0 when all checks pass, 1 otherwise. No dependencies.
 """
@@ -33,7 +33,7 @@ def check_file(path: Path, errors: list[str]) -> None:
     sections = re.split(r"(?m)^## ", text)
     for section in sections[1:]:
         blocks = re.findall(r"```(.*?)```", section, re.S)
-        lampirkan = " ".join(re.findall(r"Lampirkan:(.*)", section))
+        lampirkan = " ".join(re.findall(r"(?:Attach|Lampirkan):(.*)", section))
         for block in blocks:
             if "VIDEO STYLE & FORMAT" not in block:
                 continue

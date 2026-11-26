@@ -1,10 +1,10 @@
-# Prompt video — <container 01>
+# Video prompts — <container 01>
 
-> Generate per scene. Lampirkan berkas yang disebut di judul scene sebagai referensi, atur rasio & durasi di pengaturan tool sebelum generate.
+> Generate per scene. Attach the files named in the scene heading as references, and set the aspect ratio & duration in the tool's settings before generating.
 
-## Scene 1 · <Lokasi> · <NN> detik
-Lampirkan: `<nama>_sheet.png`, `<nama>_plate.png`
-Frame: start `<…>_start.png` (end: <… / tidak perlu>)
+## Scene 1 · <Location> · <NN> seconds
+Attach: `<name>_sheet.png`, `<name>_plate.png`
+Frame: start `<…>_start.png` (end: <… / not needed>)
 
 ```
 VIDEO STYLE & FORMAT
@@ -17,7 +17,7 @@ OPTICS
 <…>
 
 CAMERA
-<… — wajib: Never two consecutive shots from the same position.>
+<… — required: Never two consecutive shots from the same position.>
 
 LIGHTING
 <…>
@@ -26,10 +26,10 @@ CRITICAL
 <…>
 
 CHARACTERS
-<… — bentuk pendek verbatim dari cast.md>
+<… — short form verbatim from cast.md>
 
 LOCATION
-<… — blok set verbatim dari set.md + properti>
+<… — set block verbatim from set.md + props>
 
 AUDIO
 <…>
@@ -39,10 +39,10 @@ MOVEMENT NOTE
 
 SHOT BREAKDOWN
 
-SCENE [00:00-00:NN] <LOKASI> — <satu momen berkelanjutan>:
+SCENE [00:00-00:NN] <LOCATION> — <one continuous moment>:
 
-SHOT 1 (0-Ns), <lensa> <UKURAN> from <posisi fisik>, <gerakan>: <aksi>.
-<dialog / No dialogue — …>
+SHOT 1 (0-Ns), <lens> <SIZE> from <physical position>, <movement>: <action>.
+<dialogue / No dialogue — …>
 
-<baris penutup: … no freeze frame, no fade to black.>
+<closing line: … no freeze frame, no fade to black.>
 ```

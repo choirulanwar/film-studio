@@ -1,15 +1,15 @@
-# Prompt aset — <container 01>
+# Asset prompts — <container 01>
 
-Pakai ulang: <berkas dari container sebelumnya, atau: tidak ada — container pertama>
+Reuse: <files from previous containers, or: none — first container>
 
-## <nama>_sheet.png — sheet <Tokoh>
+## <name>_sheet.png — <Character> sheet
 ```
-<salin template sheet dari references/prompt-aset.md, isi dengan bentuk panjang verbatim dari cast.md>
-```
-
-## <nama>_plate.png — plate <Lokasi/Properti>
-```
-<salin template plate, isi dengan blok verbatim dari set.md>
+<copy the sheet template from references/prompt-aset.md, fill it with the long form verbatim from cast.md>
 ```
 
-> Generate semua aset di berkas ini dulu, simpan dengan nama berkas persis seperti judulnya, baru generate frame/video.
+## <name>_plate.png — <Location/Prop> plate
+```
+<copy the plate template, fill it with the verbatim block from set.md>
+```
+
+> Generate all assets in this file first, save them with the exact filenames in the headings, then generate frames/video.

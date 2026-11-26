@@ -1,24 +1,24 @@
-# Prompt aset — gerbang 5
+# Asset prompts — Gate 5
 
-Output `epNN/prompt-aset.md`: hanya aset **baru** di container itu. Aset lama cukup satu baris di kepala berkas:
+Output `epNN/prompt-aset.md`: only **new** assets in that container. Old assets get a single line at the head of the file:
 
 ```
-Pakai ulang: sari_sheet.png, teras_plate.png (dari ep01)
+Reuse: sari_sheet.png, teras_plate.png (from ep01)
 ```
 
-Judul tiap aset = nama berkas hasil generate-nya. Nama berkas ditulis di judul markdown, **bukan** di dalam blok prompt.
+Each asset's heading = the filename of its generation result. The filename is written in the markdown heading, **not** inside the prompt block.
 
-## Sheet karakter — selalu 3 panel + nama
+## Character sheets — always 3 panels + name
 
-Komposisi baku (jangan diubah-ubah antar tokoh — konsistensi layout membantu user & model):
+Standard composition (do not vary it between characters — layout consistency helps the user & the model):
 
-- **Kiri:** close-up wajah
-- **Tengah:** badan penuh dari depan
-- **Kanan:** badan penuh dari belakang
-- **Nama tokoh tercetak di gambar** (satu-satunya teks yang sengaja diminta, supaya sheet tidak tertukar saat dilampirkan)
-- Latar abu-abu netral polos, cahaya studio datar merata, pose netral berdiri
+- **Left:** close-up of the face
+- **Centre:** full body from the front
+- **Right:** full body from the back
+- **The character's name printed in the image** (the only text deliberately requested, so sheets do not get mixed up when attached)
+- Plain neutral grey background, flat even studio lighting, neutral standing pose
 
-Template (isi dari bentuk panjang di `cast.md`, **disalin**, bukan ditulis ulang):
+Template (fill from the long form in `cast.md`, **copied**, not rewritten):
 
 ```
 Character reference sheet of <BENTUK PANJANG>, three panels on a plain neutral
@@ -29,32 +29,32 @@ Avoid: dramatic lighting, rim light, film grain, blur, bokeh, missing head, crop
 feet, different faces between panels, extra people, text other than the name.
 ```
 
-Larangan yang dipertahankan dari v1 (benar, jangan dibuang): rim light dramatis, grain berat, mist, bokeh dangkal **di sheet** — semua itu menggeser geometri wajah & detail outfit. Sheet adalah dokumen identitas, bukan still film.
-Dilarang juga: sintaks khusus tool (`--ar`, parameter model, dsb.) di dalam prompt. Rasio sheet diatur di tool gambar.
+Bans kept from v1 (correct, do not drop them): dramatic rim light, heavy grain, mist, shallow bokeh **in the sheet** — all of these shift facial geometry & outfit detail. A sheet is an identity document, not a film still.
+Also banned: tool-specific syntax (`--ar`, model parameters, etc.) inside the prompt. The sheet's ratio is set in the image tool.
 
-## Plate set
+## Set plates
 
-Satu gambar kosong per lokasi, dari **sudut shot wide terpenting** di scene itu — banyak model menyalin komposisi plate, jadi sudut plate = sudut yang paling sering dipakai.
+One empty image per location, from **the most important wide shot angle** in that scene — many models copy the plate's composition, so the plate angle = the most frequently used angle.
 
 ```
-Empty location reference plate of <BLOK SET dari set.md, disalin>, eye-level wide
-framing from <sudut shot wide terpenting>, <cahaya dasar lokasi>.
+Empty location reference plate of <SET BLOCK from set.md, copied verbatim>, eye-level wide
+framing from <the most important wide shot angle>, <the location's base lighting>.
 Avoid: absolutely no people, no characters, no faces, no text, no logos, no vehicles
 unless specified in the set block.
 ```
 
-Frasa `absolutely no people` wajib ada — plate yang berisi orang akan menanam orang itu ke semua shot.
+The phrase `absolutely no people` is mandatory — a plate containing a person will plant that person into every shot.
 
-## Plate properti (hanya yang berpelat)
+## Property plates (plated ones only)
 
 ```
-Reference plate of <BLOK PROPERTI dari set.md, disalin>, on a plain neutral
+Reference plate of <PROP BLOCK from set.md, copied verbatim>, on a plain neutral
 background, three-quarter view, flat even lighting, nothing else in frame.
-Avoid: people, hands, text, labels, logos (kecuali larangan itu sudah ada di bloknya — jangan didobel dengan kata berbeda).
+Avoid: people, hands, text, labels, logos (unless that prohibition is already in its block — do not duplicate it in different words).
 ```
 
-## Urutan serah
+## Handover order
 
-Di akhir berkas, satu baris instruksi untuk user/adapter:
+At the end of the file, one line of instruction for the user/adapter:
 
-> Generate semua aset di berkas ini dulu, simpan dengan nama berkas persis seperti judulnya, baru generate frame/video. Sheet/plate yang belum digenerate = jangan mulai gerbang 6 untuk shot yang memakainya.
+> Generate all assets in this file first, save them with exactly the filenames in their headings, then generate frames/video. A sheet/plate that has not been generated yet = do not start Gate 6 for shots that use it.

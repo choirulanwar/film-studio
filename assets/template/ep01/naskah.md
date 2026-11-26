@@ -1,14 +1,14 @@
-# Naskah — <container 01>
+# Script — <container 01>
 
-## Dialog lengkap
-<dialog utuh, bisa dibaca sebagai cerita>
+## Full dialogue
+<the complete dialogue, readable as a story>
 
-## Rundown per shot
-| Shot | Dur | Lensa & ukuran | Posisi kamera fisik | Aksi | Dialog |
+## Per-shot rundown
+| Shot | Dur | Lens & size | Physical camera position | Action | Dialogue |
 |---|---|---|---|---|---|
 
-## Pembagian scene
-- Scene 1: shot <…>–<…>, <…> detik, lokasi <…>
+## Scene breakdown
+- Scene 1: shots <…>–<…>, <…> seconds, location <…>
 
-## Shot berisiko & keputusan user
-- <shot>: <risiko> → keputusan: dipertahankan / diganti dengan <alternatif>
+## Risky shots & user decisions
+- <shot>: <risk> → decision: kept / replaced with <alternative>

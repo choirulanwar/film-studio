@@ -1,12 +1,12 @@
-# Brief — <judul proyek>
+# Brief — <project title>
 
-- Topik / premis awal: BELUM DITENTUKAN
-- Format: BELUM DITENTUKAN (micro-drama / long-form / music video)
-- Rasio: BELUM DITENTUKAN
-- Bahasa dialog: BELUM DITENTUKAN
-- Durasi per container: BELUM DITENTUKAN
-- Jumlah container: BELUM DITENTUKAN
-- Look / visual preset: BELUM DITENTUKAN
-- Tool target (gambar / video): BELUM DITENTUKAN
-- Adapter: manual (default) / Spaces / Claude Code / lainnya
-- Keputusan bentrok & resolusinya: —
+- Topic / initial premise: UNDECIDED
+- Format: UNDECIDED (micro-drama / long-form / music video)
+- Aspect ratio: UNDECIDED
+- Dialogue language: UNDECIDED
+- Duration per container: UNDECIDED
+- Number of containers: UNDECIDED
+- Look / visual preset: UNDECIDED
+- Target tools (image / video): UNDECIDED
+- Adapter: manual (default) / Spaces / Claude Code / other
+- Conflicting answers & their resolution: —

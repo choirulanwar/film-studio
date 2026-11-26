@@ -1,18 +1,18 @@
-# Cast bible — <judul proyek>
+# Cast bible — <project title>
 
 Visual lock: color_preset_id = <…> · lens_preset_id = <…>
 
-<!-- Satu blok per tokoh. Tulis sekali, salin verbatim ke mana pun dipakai.
-     Bentuk panjang: kebangsaan & jenis kelamin / usia & tinggi / warna kulit /
-     rambut / bentuk wajah / bangun badan, lalu WARDROBE, lalu NADA TUBUH.
-     Tanpa tanda di wajah kecuali berfungsi cerita. -->
+<!-- One block per character. Write it once, copy it verbatim wherever it is used.
+     Long form: nationality & gender / age & height / skin tone /
+     hair / face shape / build, then WARDROBE, then BODY LANGUAGE.
+     No marks on the face unless they serve the story. -->
 
-## <NAMA> [gambar_<nama>]
+## <NAME> [gambar_<name>]
 
-<NAMA> — bentuk panjang
+<NAME> — long form
 <Indonesian man/woman, … years old, … cm, … skin, … hair, … face, … build.>
-WARDROBE: <per item: warna + bahan + detail pembeda>
-NADA TUBUH: <satu kalimat cara berdiri/bergerak>
+WARDROBE: <per item: color + material + distinguishing detail>
+BODY LANGUAGE: <one sentence on how they stand/move>
 
-<NAMA> — bentuk pendek
-<NAMA> [gambar_<nama>] — <usia>, <wardrobe ringkas>, <aktivitas generik>
+<NAME> — short form
+<NAME> [gambar_<name>] — <age>, <wardrobe in brief>, <generic activity>
